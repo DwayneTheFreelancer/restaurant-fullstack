@@ -10,7 +10,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}">
   </head>
   <body>
-    <section id="welcome">
+    <section id="app-layout">
       @include('includes.side-menu')
       <div class="welcome-jumbo">
         <div class="status">NEW</div>

@@ -10,9 +10,11 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/app.css') }}">
   </head>
   <body>
-    <section id="welcome">
+    <section id="app-layout">
       @include('includes.side-menu')
-      @yield('content')
+      <section id="content-section">
+        @yield('content')
+      </section>
     </section>
   </body>
 </html>
