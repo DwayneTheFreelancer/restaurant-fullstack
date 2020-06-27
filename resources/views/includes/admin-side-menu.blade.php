@@ -77,7 +77,7 @@
                                 <a class="nav-link" href="/admin/users">All Users <span class="badge badge-secondary">New</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/cards.html">Create user <span class="badge badge-secondary">New</span></a>
+                                <a class="nav-link" href="/admin/users/create">Create user <span class="badge badge-secondary">New</span></a>
                             </li>
                         </ul>
                     </div>
