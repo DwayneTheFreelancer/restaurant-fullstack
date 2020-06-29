@@ -78,8 +78,6 @@
                                             {{ $role->title }}
                                         </option>
                                     @endforeach
-                                    <option value="1" selected>Admin</option>
-                                    <option value="2">Employee</option>
                                 </select>
                             </div>
                             <div class="row">
