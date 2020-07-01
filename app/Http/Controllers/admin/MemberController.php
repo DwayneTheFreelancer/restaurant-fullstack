@@ -18,7 +18,6 @@ class MemberController extends Controller
         return view('admin/members/all-members', [
             'members' => $members
         ]);
-        // return view('/admin/members/all-members');
     }
     
     public function create() {
