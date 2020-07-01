@@ -45,18 +45,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Burgers</td>
-                                        <td>$9</td>
-                                        <td>2/2/2020</td>
-                                        <td><a href="/admin/food-items/1/edit"><i class="far fa-edit"></i></a></td>
-                                        <td>
-                                        <a href="/admin/food-items/1/delete" onclick="if(! confirm('Are you sure you want to delete category?')) { return false; }">
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach($items as $item)
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>{{ $item->title }}</td>
+                                            <td>{{ $item->price }}</td>
+                                            <td>{{ date('m/d/y', strtotime($item->updated_at)) }}</td>
+                                            <td><a href="/admin/food-items/{{ $item->id }}/edit"><i class="far fa-edit"></i></a></td>
+                                            <td>
+                                                <a href="#" onclick="event.preventDefault(); document.getElementById('delete-food-item-{{ $item->id }}').submit();">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                 
+                                                <form id="delete-food-item-{{ $item->id }}" action="/admin/food-items/{{ $item->id }}/delete" method="POST" style="display: none;">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -53,12 +53,12 @@ class FoodItemsController extends Controller
         $categories = FoodCategory::all();
         
         return view('admin/food-items/edit', [
-            'category' => $item,
+            'item' => $item,
             'categories' => $categories
         ]);
     }
     
-    public function update(Request $request, $id) {
+    public function update($id) {
         request()->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
@@ -67,7 +67,7 @@ class FoodItemsController extends Controller
             'category_id' => ['required', 'integer'],
         ]);
         
-        $item = new FoodItem();
+        $item = FoodItem::find($id);
         $item->title = request('title');
         $item->description = request('description');
         $item->image_url = request('image_url');

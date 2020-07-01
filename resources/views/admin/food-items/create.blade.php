@@ -57,11 +57,11 @@
                             <div class="form-group">
                                 <label for="inputimageurl">Image URL</label>
                                 <input id="inputimageurl" type="text" class="form-control form-control-lg @error('image_url') is-invalid @enderror" name="image_url" value="{{ old('image_url') }}" autocomplete="image_url" autofocus placeholder="Add the url to the item image">
-                                {{-- @error('image_url')
+                                @error('image_url')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror --}}
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
