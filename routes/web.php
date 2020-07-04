@@ -55,6 +55,11 @@ Route::delete('/admin/users/{id}/delete', 'admin\UsersController@delete');
 // Admin Customers
 // Admin Members
 Route::get('/admin/members', 'admin\MemberController@index');
+Route::get('/admin/members/create', 'admin\MemberController@create');
+Route::post('/admin/members/', 'admin\MemberController@store');
+Route::get('admin/members/{id}/edit', 'admin\MemberController@edit');
+Route::put('/admin/members', 'admin\MemberController@update');
+Route::delete('/admin/members/{id}/delete', 'admin\MemberController@delete');
 
 // Admin Reservations
 Route::get('/admin/all-reservations', 'admin\CustomersController@allReservations');

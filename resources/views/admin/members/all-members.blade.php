@@ -51,10 +51,22 @@
                                             <td>{{ $member->email }}</td>
                                             <td>{{ $member->phone_number }}</td>
                                             <td>{{ date('m/d/y', strtotime($member->updated_at)) }}</td>
+                                            <td><a href="/admin/members/{{ $member->id }}/edit"><i class="far fa-edit"></i></a></td>
+                                            <td>
+                                                <a href="#" onclick="event.preventDefault(); document.getElementById('delete-food-item-{{ $member->id }}').submit();">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                 
+                                                <form id="delete-food-item-{{ $member->id }}" action="/admin/members/{{ $member->id }}/delete" method="POST" style="display: none;">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $members->links() }}
                         </div>
                     </div>
                 </div>
