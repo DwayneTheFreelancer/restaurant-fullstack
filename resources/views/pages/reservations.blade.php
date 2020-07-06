@@ -6,7 +6,8 @@
       <div class="row">
         <div class="col-md-6">
           <h1>Get On The List</h1>
-          <form>
+          <form action="/reservations" method="POST">
+            @csrf
             <div class="form-group">
               <label for="firstnameinput">First Name</label>
               <input type="text" class="form-control" id="firstnameinput" name="fname" placeholder="John">
@@ -21,11 +22,11 @@
             </div>
             <div class="form-group">
               <label for="phoneinput">Phone Number</label>
-              <input type="text" class="form-control" id="phoneinput" name="phone" placeholder="(222)-222-2222">
+              <input type="tel" class="form-control" id="phoneinput" name="phone_number" placeholder="(222)-222-2222">
             </div>
             <div class="form-group">
               <label for="guestinput">How Many Guest?</label>
-              <select class="form-control" name="guest" id="guestinput">
+              <select class="form-control" name="guest_total" id="guestinput">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -44,7 +45,7 @@
               </select>
             </div>
             <div class="form-group">
-              <button type="button" class="btn btn-primary">Confirm</button>
+              <button type="submit" class="btn btn-primary">Confirm</button>
             </div>
           </form>
         </div>

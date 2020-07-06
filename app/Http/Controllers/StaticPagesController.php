@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Member;
+use App\Reservation;
 
 class StaticPagesController extends Controller
 {
@@ -17,6 +18,27 @@ class StaticPagesController extends Controller
     
     public function reservations() {
         return view('pages/reservations');
+    }
+    
+    public function saveReservation(Request $request) {
+        request()->validate([
+            'fname' => ['required', 'string'],
+            'lname' => ['required', 'string'],
+            'email' => ['required'],
+            'phone_number' => ['required'],
+            'guest_total' => ['required', 'integer'],
+            'time' => ['required'],
+        ]);
+        $reservation = new Reservation();
+        $reservation->fname = request('fname');
+        $reservation->lname = request('lname');
+        $reservation->email = request('email');
+        $reservation->phone_number = request('phone_number');
+        $reservation->guest_total = request('guest_total');
+        $reservation->time = request('time');
+        $reservation->save();
+        
+        return redirect('/thank-you');
     }
     
     public function contact() {
@@ -46,10 +68,10 @@ class StaticPagesController extends Controller
         $member->phone_number = request('phone_number');
         $member->save();
         
-        return redirect('/offers/thank-you');
+        return redirect('/thank-you');
     }
     
-    public function offersThankYou() {
+    public function thankYouPage() {
         return view('pages/thank-you');
     }
     

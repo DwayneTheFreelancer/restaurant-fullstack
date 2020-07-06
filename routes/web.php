@@ -19,11 +19,12 @@ Route::get('/menu', 'StaticPagesController@menu');
 Route::get('/menu/{slug}', 'StaticPagesController@singlemenu');
 Route::get('/about', 'StaticPagesController@about');
 Route::get('/reservations', 'StaticPagesController@reservations');
+Route::post('/reservations', 'StaticPagesController@saveReservation');
 Route::get('/contact', 'StaticPagesController@contact');
 Route::get('/giftcards', 'StaticPagesController@giftcards');
 Route::get('/offers', 'StaticPagesController@offers');
 Route::post('/offers', 'StaticPagesController@registerMember');
-Route::get('/offers/thank-you', 'StaticPagesController@offersThankYou');
+Route::get('/thank-you', 'StaticPagesController@thankYouPage');
 
 // Admin Dashboard
 Route::get('/admin', 'admin\AdminController@dashboard');
@@ -62,7 +63,8 @@ Route::put('/admin/members', 'admin\MemberController@update');
 Route::delete('/admin/members/{id}/delete', 'admin\MemberController@delete');
 
 // Admin Reservations
-Route::get('/admin/all-reservations', 'admin\CustomersController@allReservations');
+Route::get('/admin/reservations', 'admin\ReservationController@index');
+Route::delete('/admin/reservations/{id}/delete', 'admin\ReservationController@delete');
 
 // Admin Auth
 Route::get('/admin/register', function() {

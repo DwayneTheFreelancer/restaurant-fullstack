@@ -78,10 +78,10 @@
                                 <div id="submenu-3-2" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/admin/members">All Reservations<span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="/admin/reservations">All Reservations<span class="badge badge-secondary">New</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/admin/members/create">New Reservation<span class="badge badge-secondary">New</span></a>
+                                            <a class="nav-link" href="/admin/reservations/create">New Reservation<span class="badge badge-secondary">New</span></a>
                                         </li>
                                     </ul>
                                 </div>
